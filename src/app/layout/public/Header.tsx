@@ -11,7 +11,7 @@ import {
   Flex,
   Menu,
 } from '@chakra-ui/react'
-import { useMobileBreakPoint } from '@/ultils/MobileBreakPoint'
+import { useMobileBreakPoint } from '@/utils/MobileBreakPoint'
 
 export const Header = () => {
   const isMobile = useMobileBreakPoint()
@@ -25,7 +25,7 @@ export const Header = () => {
       height="5rem"
       width="100%"
     >
-      {!isMobile && (
+      {isMobile && (
         <Flex mr="1.5rem">
           <Menu>
             <MenuButton
@@ -48,7 +48,7 @@ export const Header = () => {
           </Menu>
         </Flex>
       )}
-      <Flex mr="5.9rem" gap="1.9rem" hidden={!isMobile}>
+      <Flex mr="5.9rem" gap="1.9rem" hidden={!!isMobile}>
         <Text textColor="main.cyan.100" cursor="pointer" fontSize="1.1rem">
           clientes
         </Text>
